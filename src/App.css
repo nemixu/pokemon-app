@@ -1,1 +1,43 @@
+.body {
+  padding: 0;
+  margin: 0;
+}
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin:10px;
+  background-color: grey;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 5px 5px rbga(0,0,0,0.5);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.pokemon-img{ 
+  height: 150px;
+}
+
+.buttons{
+  position: absolute;
+  top: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* .button {
+  background-color: #999;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  min-width: 50px;
+  margin: 5px;
+  outline: none;
+} */
