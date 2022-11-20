@@ -10,6 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/:offset?" element={<Home/>} />
         <Route path="/pokemon-detail/:id" element={<PokemonDetail/>} />
       </Routes>
     </Router>
