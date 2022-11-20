@@ -1,8 +1,9 @@
 import React from "react"
 import axios from "axios";
 import { useState, useEffect  } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
-import Card from "./Card";
+import { useSearchParams } from "react-router-dom";
+import PokemonCards from "./PokemonCards";
+import Button from "./Button";
 
 const Home = () => {
 
@@ -34,6 +35,16 @@ const Home = () => {
         })
     }    
     
+    const handleButtonClickBack = () => {
+        setPokemonData([])
+        setOffset(Number(offset) -20)
+    }  
+    
+    const handleButtonClickForward = () => {
+        setPokemonData([])
+        setOffset(Number(offset) +20)
+    }    
+    
     // lifecycle methods -> allows to do things as part of the rendering cycle of the dom.
     // any time endpoint changes, recall
     useEffect(()=> {
@@ -45,26 +56,26 @@ const Home = () => {
             <div className="pt-3 text-center container">
                 <div className="buttons">
                 {
-                    offset == 0 && "0" ? 
-                    <button className="btn btn-success" disabled>Previous</button> : 
-                    <button className="btn btn-success" onClick={() => {
-                            setPokemonData([])
-                            setOffset(offset -20)
-                        }}>Previous</button>
+                    offset == 0 && "0" ?
+                    <Button isDisabled={true} label={'Previous'} handleClick={handleButtonClickBack} className={'btn btn-success'} />
+                    :
+                    <Button isDisabled={false} label={'Previous'} handleClick={handleButtonClickBack} className={'btn btn-success'}/>
                 }
+
+                
                 </div>
                 <div className="buttons">
                 {
-                        offset >= 0 && <button onClick={() => {
-                            setPokemonData([])
-                            setOffset(Number(offset) +20)
-                        }} className="btn btn-success">Next</button>
+                    offset <= 1080 && '1080' ?
+                    <Button isDisabled={false} label={'Next'} handleClick={handleButtonClickForward} className={'btn btn-warning'}/>
+                    :
+                    <Button isDisabled={true} label={'Next'} handleClick={handleButtonClickForward} className={'btn btn-warning'}/>
                 }
                 </div>
             </div>
             <div className="card-container container">
                 <div className="row">
-                    <Card pokemon={pokemonData} loading={loading} currentOffset={offset}/>     
+                    <PokemonCards pokemon={pokemonData} loading={loading} currentOffset={offset}/>     
                 </div>       
             </div>
         </>
