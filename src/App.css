@@ -69,7 +69,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 25%;
+  top: 10%;
   position: relative;
 }
 
@@ -89,12 +89,21 @@
   background-color: white;
   width: 100%;
   display: grid;
+  outline-style: auto;
+  outline-color: #fff;
+}
+
+.pokedex {
+  position: relative;
+  left: 44%;
 }
 
 .stat-name-fillbar {
   border-right: none;
   border-radius: 10px 0px 0px 10px;
-  
+  font-weight: bold;
+  border-radius: 0 10px 10px 0;
+  max-width: 100%;
 }
 
 .pokemon-detail-img{
@@ -103,28 +112,31 @@
 }
 
 .type-grass {
-  background-color: lightgreen;
+  background-color: #9bcd50;
 }
 
-.type-fire,
-.type-fighting { 
-  background-color: orange;
+.type-fire { 
+  background-color: #f97d24;
+}
+
+.type-fighting {
+  background-color: #d56724;
 }
 
 .type-water {
-  background-color: lightblue;
+  background-color: #4693c4;
 }
 
 .type-bug {
-  background-color: darkgreen;
+  background-color: #729f3f;
 }
 
 .type-normal{
-  background-color: grey;
+  background-color: #a4acaf;
 }
 
 .type-poison{
-  background-color: purple;
+  background-color: #b97ec9;
 }
 
 .type-electric,
@@ -133,5 +145,9 @@
 }
 
 .type-fairy { 
-  background-color: pink;
+  background-color: #fcb9e9;
+}
+
+.type-rock{
+  background-color: #a38c22;
 }
