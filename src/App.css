@@ -3,22 +3,37 @@
   margin: 0;
 }
 
+.pokemon-card a {
+  text-decoration: none;
+  color: #5ec5b2;
+  text-transform: capitalize;
+}
+
+.pokemon-card a :hover {
+  color: #388375;
+}
+
+.pokemon-card:hover {
+  transform: scale(105%);
+  transition: ease-in;
+  transition: 0.2s ease-in-out;
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.card {
+.pokemon-card {
+  padding-top: 30px;
   margin:10px;
-  background-color: grey;
+  background-color: transparent;
   width: 250px;
   height: 250px;
-  box-shadow: 0 5px 5px rbga(0,0,0,0.5);
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  box-shadow: 2px 2px 8px #48656361;
+  border-radius: 0.5rem;
   box-sizing: border-box;
+  transition: 0.2s ease-in-out;
 }
 
 .pokemon-img{ 
@@ -26,18 +41,97 @@
 }
 
 .buttons{
-  position: absolute;
-  top: 200px;
+  position: relative;
   display: flex;
   flex-direction: row;
+  display: inline;
+  padding-left: 15px;
 }
 
-/* .button {
-  background-color: #999;
-  border: none;
-  border-radius: 5px;
-  padding: 15px;
-  min-width: 50px;
-  margin: 5px;
-  outline: none;
-} */
+.card-container {
+  margin-top: 80px;
+}
+
+.text-color {
+  color: #486563;
+}
+
+.img-container {
+  background: linear-gradient(0deg, rgba(255,255,255,0.001) 0%, rgba(255,255,255,1) 104%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 350px;
+}
+
+.pokemon-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 25%;
+  position: relative;
+}
+
+.pokemon-detail-wrapper-card {
+  background:red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 3px 8px #48656361;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  transition: 0.2s ease-in-out;
+}
+
+.stat-background {
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  display: grid;
+}
+
+.stat-name-fillbar {
+  border-right: none;
+  border-radius: 10px 0px 0px 10px;
+  
+}
+
+.pokemon-detail-img{
+  width: auto;
+  padding: 20px
+}
+
+.type-grass {
+  background-color: lightgreen;
+}
+
+.type-fire,
+.type-fighting { 
+  background-color: orange;
+}
+
+.type-water {
+  background-color: lightblue;
+}
+
+.type-bug {
+  background-color: darkgreen;
+}
+
+.type-normal{
+  background-color: grey;
+}
+
+.type-poison{
+  background-color: purple;
+}
+
+.type-electric,
+.type-ground {
+  background-color: #eed535;
+}
+
+.type-fairy { 
+  background-color: pink;
+}
