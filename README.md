@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+### My first react app.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is for practicing react js.
+Using the pokemon api to fetch a list of pokemon using Axios.
+The basic functionality of this application is to pull pokemon from an open sourced api, display them through a PokemonCards component that acts as an individual Card for each pokemon.
+Each Card is clickable and unmounts the Pokemon Cards, and mounts a PokemonDetail component.
+The PokemonDetail component shows the stats and image of the selected pokemon.
+There is a back button which returns you to the previous page which is handled using the useNavigate hook to pass a path and returns to the searchbar the offset of the page you were previously on which is stored in the useLocation hook by getting the state. The current offset is sent as a prop to the PokemonCards.
 
-## Available Scripts
+Bootstrap was used for the styling with some custom css.
 
-In the project directory, you can run:
 
 ### `npm start`
 
