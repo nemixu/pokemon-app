@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//re name card to pokelist or something descriptive  pokeball spinner#
 //prettier and eslint & configure
 // do unit tests jest react testing library
 const Card = ({pokemon, loading, currentOffset}) => {
