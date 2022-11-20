@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
-import Home from "./Home";
+import Button from "./Button";
 
 const PokemonDetail = () => {
     const {state} = useLocation();
@@ -22,12 +21,13 @@ const PokemonDetail = () => {
                         <div className="container-fluid" key={state.item.id}>
                             <div className="row">
                                 <div className="col-12">
-                                    <button className="btn btn-danger" onClick={handleBackClick}>Go Back</button>
+                                    <Button label={'Go back'} handleClick={handleBackClick} isDisabled={false} className={'btn btn-danger'}/>
                                 </div>
                                 <div className="col-12">
                                     <div className="pokemon-detail-wrapper">
                                         <div className={`pokemon-detail-wrapper-card type-${type}`}>
                                             <div className="img-container">
+                                                <span className="d-block pokedex">#{state.item.id}</span>
                                                 <img className="pokemon-detail-img" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${state.item.id}.svg`} alt="pokemon"/>
                                             </div>
                                         
@@ -36,7 +36,6 @@ const PokemonDetail = () => {
                                                     <span>{state.item.name}</span>
                                                 </h1>
                                                 <h2 className="text-center">
-                                                    <span className="d-block">#{state.item.id}</span>
                                                     <span>Weight{state.item.weight}</span>
                                                 </h2>
                                             </div>
@@ -69,7 +68,7 @@ const PokemonDetail = () => {
                                                         return(
                                                             <div className="col-12">
                                                                 <div className="d-block">
-                                                                    <div className="px-2 d-inline">
+                                                                    <div className="px-2 d-inline text-capitalize">
                                                                         
                                                                         {statsArray.stat.name}
                                                                     
