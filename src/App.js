@@ -7,7 +7,7 @@ import PokemonDetail from './Components/PokemonDetail';
 function App() {
 	return (
 		// react router, using Routes instead of Switch as vers6 of router uses this and takes an element property.
-		<Router>
+		<Router basename={process.env.PUBLIC_URL}>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/:offset?" element={<Home />} />
