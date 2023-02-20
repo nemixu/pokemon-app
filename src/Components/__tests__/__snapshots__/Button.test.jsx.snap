@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button.jsx should render correctly 1`] = `
+<button
+  class="colour"
+  type="button"
+>
+  test
+</button>
+`;
