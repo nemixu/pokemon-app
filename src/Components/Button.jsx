@@ -1,28 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Button({ label, isDisabled, className, handleClick }) {
-
-	const [clicked, setClicked] = useState(0);
-
-	const localHandleClick = () => {
-		setClicked(clicked+1)
-
-		//pass handleclick as jest mock function, asserrt that it was called number of times X button was clicked.
-		handleClick();
-	}
-
+function Button({ label, handleClick, isDisabled, className }) {
 	return (
-		<>
-		<p>Clicked {clicked}</p>
 		<button
 			type="button"
 			className={className}
-			onClick={localHandleClick}
-			disabled={isDisabled }>
-			{isDisabled ? "disabled" : label }
-		</button>
-		</>
-		
+			onClick={handleClick}
+			disabled={isDisabled}>
+			{label}
+		</button>		
 	);
 }
 
